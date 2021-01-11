@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/baizhi2008?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+    lettuce:
+      pool:
+        max-active: 500
+        max-idle: 50
+        min-idle: 10
+        max-wait: 30000
+    host: 192.168.217.136
+    port: 6379
+mybatis:
+  type-aliases-package: com.baizhi.entity
+  mapper-locations: classpath:com/baizhi/mapper/*Mapper.xml
+server:
+  port: 8989
+  servlet:
+    context-path: /user-demo
+  #分页插件
+pagehelper:
+  helper-dialect: mysql
+  params: count=counSql
+  reasonable: true
+  support-methods-arguments: true

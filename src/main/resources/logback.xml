@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <!--定义项目中日志输出位置-->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!--定义项目的日志输出格式-->
+        <!--定义项目的日志输出格式-->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern> [%p] %d{yyyy-MM-dd HH:mm:ss} %m %n</pattern>
+        </layout>
+    </appender>
+    <appender name="fileLog" class="ch.qos.logback.core.FileAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern> [%p] %d{yyyy-MM-dd HH:mm:ss} %m %n</pattern>
+        </layout>
+        <file>d:logback.log</file>
+        <append>true</append>
+    </appender>
+
+    <!--项目中根日志控制-->
+    <root level="debug">
+        <appender-ref ref="stdout"/>
+       <!-- <appender-ref ref="fileLog"/>-->
+    </root>
+
+    <!--项目中指定包日志控制-->
+    <logger name="com.baizhi.test" level="debug"/>
+
+</configuration>
